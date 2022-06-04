@@ -4,37 +4,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//UC - 2
-//Calculate Daily Employee Wage 
-//Assume Wage per hour is 20
-//Assume Full Day hour is 8
+//UC - 3
+//Add Part time Employee & Wage
+//Assume Part time hour is 4
 
 namespace Program
 {
-    internal class DailyEmpWage
+    internal class PartTimeEmpWage
     {
-        int IS_EmpPresent = 1;
-        int Wage_Per_Hour = 20;
-        int FullDay_Hour = 8;
-        int DailyWage = 0;
-        public void CheckDailyEmpWg()
+        public int EmpPresent = 1;
+        public int FullTime = 1;
+        public int WagePerHour = 20;
+        public int FullDayHour = 8;
+        public int PartTimeDayHour = 4;
+        public int DailyWage = 0;
+
+        public void CheckPartTimeEmpWage()
         {
-            Random ChechEmp = new Random();
-            int value = ChechEmp.Next(0, 2);
-            if (value == IS_EmpPresent)
+            Random Empcheck = new Random();
+            int value = Empcheck.Next(0, 2);
+            if (value == EmpPresent)
             {
-                DailyWage = FullDay_Hour * Wage_Per_Hour;
-
-                Console.WriteLine("Employee Present and DailyWage = {0}", DailyWage);
-
+                Random TimeCheck = new Random();
+                int WorkingHours = TimeCheck.Next(0, 2);
+                if (WorkingHours == FullTime)
+                {
+                    DailyWage = WagePerHour * FullDayHour;
+                    Console.WriteLine("Employee is Present,in Full time and Dailywage = {0}", DailyWage);
+                }
+                else
+                {
+                    DailyWage = WagePerHour * PartTimeDayHour;
+                    Console.WriteLine("Employee is present,in Part time and Dailywage = {0}", DailyWage);
+                }
             }
             else
             {
-                Console.WriteLine("Employee Absent");
-
+                Console.WriteLine("Employee is absent");
             }
 
         }
-
     }
 }
+
