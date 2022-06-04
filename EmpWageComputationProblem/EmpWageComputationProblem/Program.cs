@@ -5,9 +5,9 @@ namespace Program
     {
         public static void Main(string[] args)
         {
-            //UC3
-            PartTimeEmpWage prg = new PartTimeEmpWage();
-            prg.CheckPartTimeEmpWage();
+            //UC4
+            SwitchCaseProb prg = new SwitchCaseProb();
+            prg.CalculateEmpWage();
         }
     }
 }

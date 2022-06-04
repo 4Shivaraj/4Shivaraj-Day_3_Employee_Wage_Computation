@@ -4,46 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//UC - 3
-//Add Part time Employee & Wage
-//Assume Part time hour is 4
+//UC - 4
+//Solving using Switch Case Statement
 
 namespace Program
 {
-    internal class PartTimeEmpWage
+    public class SwitchCaseProb
     {
-        public int EmpPresent = 1;
-        public int FullTime = 1;
-        public int WagePerHour = 20;
-        public int FullDayHour = 8;
-        public int PartTimeDayHour = 4;
-        public int DailyWage = 0;
+        public const int IS_FULL_TIME = 1;
+        public const int IS_PART_TIME = 2;
+        public const int IS_ABSENT = 0;
+        int EmpDailyWage = 0;
+        public int EmpWage = 20;
 
-        public void CheckPartTimeEmpWage()
+        public int IsEmployeePresent()
         {
-            Random Empcheck = new Random();
-            int value = Empcheck.Next(0, 2);
-            if (value == EmpPresent)
+            return new Random().Next(0, 3);
+        }
+
+        public void CalculateEmpWage()
+        {
+            int EmpWorkingHours = 0;
+
+            switch (IsEmployeePresent())
             {
-                Random TimeCheck = new Random();
-                int WorkingHours = TimeCheck.Next(0, 2);
-                if (WorkingHours == FullTime)
-                {
-                    DailyWage = WagePerHour * FullDayHour;
-                    Console.WriteLine("Employee is Present,in Full time and Dailywage = {0}", DailyWage);
-                }
-                else
-                {
-                    DailyWage = WagePerHour * PartTimeDayHour;
-                    Console.WriteLine("Employee is present,in Part time and Dailywage = {0}", DailyWage);
-                }
+                case IS_ABSENT:
+                    EmpWorkingHours = 0;
+                    break;
+
+                case IS_PART_TIME:
+                    EmpWorkingHours = 4;
+                    break;
+
+                case IS_FULL_TIME:
+                    EmpWorkingHours = 8;
+                    break;
+
             }
-            else
-            {
-                Console.WriteLine("Employee is absent");
-            }
+            EmpDailyWage = EmpWorkingHours * EmpWage;
+            Console.WriteLine("Total Employee Wage = {0}", EmpDailyWage);
 
         }
+
     }
 }
+
 
