@@ -4,26 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//UC - 5
-//Calculating Wages for a Month
-//Assume 20 Working Day per Month
-
-
+// UC - 6
+// Calculate Wages till a condition of total working hours or days is reached for a month
+// Assume 100 hours
 
 namespace Program
 {
-    public class CalculatingWagesForMonth
+    internal class EmployeeWage
     {
         public const float EmpWagePerHour = 20;
-        internal void CheckEmpPresentAbsent() { }
-        public const int FullTime_Working_Hours_PerDay = 8;
-        public const int PartTime_Working_Hours_PerDay = 4;
+        public const int FullTime_WorkingHrs_PerDay = 8;
+        public const int PartTime_WorkingHours_PerDay = 4;
+        public const int MAX_WORKING_HRS = 100;
+        public const int MAX_WORKING_DAYS = 20;
         public const int IS_FULL_TIME = 1;
         public const int IS_PART_TIME = 2;
         public const int IS_ABSENT = 0;
-        public const int Num_WorkingDays_Per_Month = 20;
-        public float EmpMonthlyWage = 0;
         float EmpDailyWage = 0;
+        public float TotalWage = 0;
 
         public int IsEmployeePresent()
         {
@@ -34,7 +32,8 @@ namespace Program
         {
             int DayNumber = 1;
             int EmpWorkingHours = 0;
-            while (DayNumber <= Num_WorkingDays_Per_Month)
+            int TotalWorkingHrs = 0;
+            while (DayNumber <= MAX_WORKING_DAYS && TotalWorkingHrs <= MAX_WORKING_HRS)
             {
 
                 switch (IsEmployeePresent())
@@ -44,19 +43,22 @@ namespace Program
                         break;
 
                     case IS_PART_TIME:
-                        EmpWorkingHours = PartTime_Working_Hours_PerDay;
+                        EmpWorkingHours = PartTime_WorkingHours_PerDay;
                         break;
 
                     case IS_FULL_TIME:
-                        EmpWorkingHours = FullTime_Working_Hours_PerDay;
+                        EmpWorkingHours = FullTime_WorkingHrs_PerDay;
                         break;
                 }
                 EmpDailyWage = EmpWorkingHours * EmpWagePerHour;
 
-                EmpMonthlyWage += EmpDailyWage;
+                TotalWage += EmpDailyWage;
                 DayNumber++;
+                TotalWorkingHrs += EmpWorkingHours;
             }
-            Console.WriteLine("Employee Monthly Wage = {0}", EmpMonthlyWage);
+            Console.WriteLine("Total working days :" + (DayNumber) + "\n Total working hours :" + TotalWorkingHrs + "");
+
         }
+
     }
 }
