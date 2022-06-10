@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-// UC - 6
+// UC - 7
+//Refactor the Code to write a Class Method to Compute Employee Wage - Use Class Method and Class Variables
 // Calculate Wages till a condition of total working hours or days is reached for a month
 // Assume 100 hours
 
