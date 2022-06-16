@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmployeewageComputation
 {
-    class EmployeeWageComputation
+    class EmployeeWageComputation : InterfaceEmpComputation
     {
         public const int IS_FULL_TIME = 1;
         public const int IS_PART_TIME = 2;
@@ -85,6 +85,7 @@ namespace EmployeewageComputation
                 Console.WriteLine("Monthly wage for {0} is {1}", CompanyList[i], CompanyList[i + 1]);
             }
         }
-
     }
-}
+}   
+
+
