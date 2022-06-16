@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//UC-11
-//Ability to manage Employee Wage of multiple companies using Interface approach 
-//-Note: Refactor to have one EmpWageBuilder to implement Interface
+//UC-12
+//Refactor to have list of multiple companies to manage Employee Wage.
+//- Note: Refactor to use ArrayList instead of array
 
 namespace EmployeewageComputation
 {
@@ -29,4 +29,4 @@ namespace EmployeewageComputation
 
 //Result
 //Monthly wage for TATA is 2080
-//Monthly wage for MAHINDRA is 3000
+//Monthly wage for MAHINDRA is 3120

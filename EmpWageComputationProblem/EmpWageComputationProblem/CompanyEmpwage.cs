@@ -14,7 +14,7 @@ namespace EmployeewageComputation
         public int PartTime_WorkingHours_PerDay;
         public int MAX_WORKING_HRS;
         public int MAX_WORKING_DAYS;
-        
+
 
         public Company(String CompanyName, int EmpWagePerhour, int FullTime_WorkingHrs_PerDay, int PartTime_WorkingHours_PerDay, int MAX_WORKING_HRS, int MAX_WORKING_DAYS)
         {
@@ -27,5 +27,6 @@ namespace EmployeewageComputation
 
         }
 
+        
     }
 }
