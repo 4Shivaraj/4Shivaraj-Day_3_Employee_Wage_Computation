@@ -33,7 +33,7 @@ namespace EmployeewageComputation
             CompaniesDict.Add(CompanyName.ToLower(), company);
             //CompanyList[ArrayIndex] = CompanyName;
             CompanyList.Add(CompanyName);
-            //CompanyList.Add(EmpWagePerhour * FullTime_WorkingHrs_PerDay);
+            CompanyList.Add(EmpWagePerhour * FullTime_WorkingHrs_PerDay);
 
             ArrayIndex++;
         }
@@ -88,9 +88,9 @@ namespace EmployeewageComputation
         }
         public void displayArray()
         {
-            for (int i = 0; i < CompanyList.Count; i += 2)
+            for (int i = 0; i < CompanyList.Count; i += 3)
             {
-                Console.WriteLine("Monthly wage for {0} is {1}", CompanyList[i], CompanyList[i + 1]);
+                Console.WriteLine("Monthly wage for {0} with \n Daily wage = {1} is {2}\n", CompanyList[i], CompanyList[i + 1], CompanyList[i + 2]);
             }
         }
     }

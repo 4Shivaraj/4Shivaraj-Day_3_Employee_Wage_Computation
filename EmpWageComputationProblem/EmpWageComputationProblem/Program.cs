@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//UC-12
-//Refactor to have list of multiple companies to manage Employee Wage.
-//- Note: Refactor to use ArrayList instead of array
+//UC-13
+//Store the Daily Wage along with the Total Wage
 
 namespace EmployeewageComputation
 {
@@ -28,5 +27,6 @@ namespace EmployeewageComputation
 }
 
 //Result
-//Monthly wage for TATA is 2080
-//Monthly wage for MAHINDRA is 3120
+//Monthly wage for TATA with Daily wage = 160 is 2080
+
+//Monthly wage for MAHINDRA with Daily wage = 240 is 3000
